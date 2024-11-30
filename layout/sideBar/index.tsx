@@ -257,6 +257,72 @@ const SideBar: React.FC = () => {
           </ListItem>
         </List>
       </Collapse>
+
+
+{/* crud */}
+
+      <ListItem disablePadding>
+        <ListItemButton onClick={() => handleToggle('Crud')}>
+          <ListItemText primary="Crud" />
+          {open === 'Crud' ? <ExpandLess /> : <ExpandMore />}
+        </ListItemButton>
+      </ListItem>
+      <Collapse in={open === 'Crud'} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding sx={{ pl: 4 }}>
+        <ListItem
+            component={Link}
+            href="/crud/all-student"
+            sx={{
+              borderRadius: 1,
+              transition: "transform 0.2s, box-shadow 0.2s",
+              "&:hover": {
+                transform: "translateX(10px)",
+                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                backgroundColor: "#e3f2fd",
+              },
+              textDecoration: "none",
+              color: "#1976d2",
+            }}
+          >
+            <Typography
+              sx={{
+                textTransform: "capitalize",
+                padding: 1,
+                textAlign: "left",
+                fontWeight: "bold",
+              }}
+            >
+              All Student
+            </Typography>
+          </ListItem>
+        <ListItem
+            component={Link}
+            href="/crud/add-student"
+            sx={{
+              borderRadius: 1,
+              transition: "transform 0.2s, box-shadow 0.2s",
+              "&:hover": {
+                transform: "translateX(10px)",
+                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                backgroundColor: "#e3f2fd",
+              },
+              textDecoration: "none",
+              color: "#1976d2",
+            }}
+          >
+            <Typography
+              sx={{
+                textTransform: "capitalize",
+                padding: 1,
+                textAlign: "left",
+                fontWeight: "bold",
+              }}
+            >
+              Add Student
+            </Typography>
+          </ListItem>
+        </List>
+      </Collapse>
     </List>
 
     

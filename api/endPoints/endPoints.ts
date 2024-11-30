@@ -31,5 +31,13 @@ export const endpoints = {
       coursephoto: "/course/photo",
       
     },
+    crud: {
+      allstudent: "/allstudent",
+      addstudent: "/student",
+      editstudent:"/edit",
+      updatestudent:"/update",
+      deletestudent:"/delete"
+      
+    },
   };
   
