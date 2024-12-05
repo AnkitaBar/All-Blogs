@@ -5,8 +5,16 @@ import { loginMutation } from '@/customHooks/auth.query.hooks';
 import { loginProps } from '@/typeScript/auth.interface';
 import { FieldValues, useForm } from 'react-hook-form';
 import Link from 'next/link';
+import { useUserStore } from '@/toolkit/store/store';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/router';
 
 export default function Login() {
+
+  const { token, setToken } = useUserStore();
+
+  const router = useRouter();
+
 
   const { register, handleSubmit, formState: { errors } } = useForm<loginProps>()
 
@@ -19,8 +27,17 @@ export default function Login() {
     const formdata = new FormData();
     formdata.append("email", email);
     formdata.append("password", password);
-    mutate(formData);
-    // console.log(formData,"formdata");
+    mutate(formData, {
+      onSuccess: (data) => {
+        // console.log(data, "data");
+        setToken("");
+        toast.success(data.message);
+        router.push("/");
+      },
+      onError: (error) => {
+        console.log(error, "error");
+      },
+    });    // console.log(formData,"formdata");
 
     // router.push("/cms/list");
   };

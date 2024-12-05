@@ -283,7 +283,25 @@ export interface showAllCategoryProps extends Omit<IshowAllCategoryProps, 'data'
   }
 
 
+///////////////////// contact 
 
+ // for contact
+ export interface IcontactProps {
+  success: boolean;
+  // message: string;
+      _id: string;
+      name: string;
+      email: string;
+      phone: string;
+      message: string;
+      createdAt: string;
+      updatedAt: string;
+    
+  
+}
+export interface contactProps extends IcontactProps {
+  data: IcontactProps;
+}
 
 
 

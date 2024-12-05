@@ -39,7 +39,7 @@ const EditStudent = () => {
             phone: e.phone,
             address: e.address,
             city: e.city,
-            class: e.city,
+            class: e.class,
         }
         updateStudentMutate(payload as updateStudentProps, {
             onSuccess: () => {
@@ -93,7 +93,7 @@ const EditStudent = () => {
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             
             <TextField
-              label="Name"
+              // label="Name"
               variant="outlined"
               fullWidth
               required
@@ -106,7 +106,7 @@ const EditStudent = () => {
               helperText={errors.name ? errors.name.message : ''}
             />
             <TextField
-              label="Email"
+              // label="Email"
               variant="outlined"
               fullWidth
               required
@@ -119,7 +119,7 @@ const EditStudent = () => {
               helperText={errors.email ? errors.email.message : ''}
             />
               <TextField
-                label="Phone"
+                // label="Phone"
                 variant="outlined"
                 fullWidth
                 required
@@ -132,7 +132,7 @@ const EditStudent = () => {
                   helperText={errors.phone ? errors.phone.message : ''}
               />
               <TextField
-                label="Address"
+                // label="Address"
                 variant="outlined"
                 fullWidth
                 required
@@ -145,7 +145,7 @@ const EditStudent = () => {
                   helperText={errors.address ? errors.address.message : ''}
               />
             <TextField
-              label="City"
+              // label="City"
               variant="outlined"
               fullWidth
               required
@@ -158,7 +158,7 @@ const EditStudent = () => {
               helperText={errors.city ? errors.city.message : ''}
             />
             <TextField
-            //   label="Class"
+              // label="Class"
             //   type="number"
               variant="outlined"
               fullWidth

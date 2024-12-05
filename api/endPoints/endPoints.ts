@@ -24,6 +24,7 @@ export const endpoints = {
       teamphoto: "/team/photo",
       banner: "/banner",
       bannerphoto: "/banner/photo",
+      contact:"/contact/create"
       
     },
     course: {

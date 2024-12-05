@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Drawer,
   List,
@@ -13,8 +13,17 @@ import {
 import { ExpandLess, ExpandMore, Menu } from '@mui/icons-material';
 import { useTheme, useMediaQuery } from '@mui/material';
 import Link from 'next/link';
+import { useUserStore } from '@/toolkit/store/store';
 
 const SideBar: React.FC = () => {
+
+  const { token, setToken } = useUserStore();
+
+  useEffect(() => {
+    setToken("")
+  },[])
+
+
   const [open, setOpen] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -261,6 +270,8 @@ const SideBar: React.FC = () => {
 
 {/* crud */}
 
+{ token && (
+<>
       <ListItem disablePadding>
         <ListItemButton onClick={() => handleToggle('Crud')}>
           <ListItemText primary="Crud" />
@@ -323,6 +334,8 @@ const SideBar: React.FC = () => {
           </ListItem>
         </List>
       </Collapse>
+      </>
+      )}
     </List>
 
     

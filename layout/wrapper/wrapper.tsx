@@ -18,7 +18,7 @@ const Wrapper = ({ children }: LayoutProps) => {
       {/* {/ {/ Header /} /} */}
       <Header />
 
-      <Box sx={{ display: 'flex', flex: 1, marginTop: '64px'   }}>
+      <Box sx={{ display: 'flex', flex: 1, marginTop: '64px' }}>
         {/* {/ {/ Side Navigation /} /} */}
         <SideBar />
 
@@ -34,6 +34,7 @@ const Wrapper = ({ children }: LayoutProps) => {
         >
           {children}
         </Box>
+       
       </Box>
 
       {/* {/ {/ Footer /} /} */}

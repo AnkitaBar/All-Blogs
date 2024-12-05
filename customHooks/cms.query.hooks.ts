@@ -1,8 +1,8 @@
 import { allBlogsAPICall } from "@/api/functions/allBlogs.api";
 import { allCommentsAPICall } from "@/api/functions/allComments.api";
 import { blogDetailsAPICall } from "@/api/functions/blogDetails.api";
-import { addCommentProps, allServiceProps, allTestimonialProps, categoryPostProps, IallBlogsProps, IblogDetailsProps, ICommentProps, IcoursesProps, IshowAllCategoryProps, latestPostProps, TeamProps } from "@/typeScript/cms.interface";
-import { useMutation, useQuery, UseQueryResult } from "@tanstack/react-query";
+import { addCommentProps, allServiceProps, allTestimonialProps, categoryPostProps, IallBlogsProps, IblogDetailsProps, ICommentProps, IcontactProps, IcoursesProps, IshowAllCategoryProps, latestPostProps, TeamProps } from "@/typeScript/cms.interface";
+import { useMutation, UseMutationResult, useQuery, UseQueryResult } from "@tanstack/react-query";
 import { useGlobalHooks } from "./globalHooks/globalHooks";
 import { addCommentsAPICall } from "@/api/functions/addComments.api";
 import { addLikesFn } from "@/api/functions/addLikes.api";
@@ -14,6 +14,7 @@ import { allServiceAPICall } from "@/api/functions/services.api";
 import { allTestimonialAPICall } from "@/api/functions/testimonial.api";
 import { TeamAPICall } from "@/api/functions/team.api";
 import { allCoursesAPICall } from "@/api/functions/course.api";
+import { addContactFn } from "@/api/functions/contact.api";
 
 ////// allBlogs ////////////////
 
@@ -154,3 +155,21 @@ export const allCoursesQuery = (): UseQueryResult<IcoursesProps, unknown> => {
     queryFn: allCoursesAPICall
   });
 };
+
+
+// for creating contact query
+export const createContactMutation = (): UseMutationResult<IcontactProps, unknown> => {
+  const { queryClient } = useGlobalHooks()
+  // const cookie = new Cookies()
+  return useMutation<IcontactProps, void, unknown>({
+      mutationFn: addContactFn,
+      onSuccess: (res: IcontactProps) => {
+          const { success, message } = res || {}
+          if (success) {
+              // cookie.set("token", token, { path: "/", secure: true })
+              console.log(res, "res");
+          }
+          queryClient.invalidateQueries({ queryKey: ["CREATE_CONTACT"] })
+      }
+  })
+}
