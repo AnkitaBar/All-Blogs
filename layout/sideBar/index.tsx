@@ -39,7 +39,7 @@ const SideBar: React.FC = () => {
   };
 
   const drawerContent = (
-    <List>
+    <List sx={{ overflowX:'hidden'}}>
 
 
 {/* All Blogs */}
@@ -371,6 +371,7 @@ const SideBar: React.FC = () => {
             width: 240,
             boxSizing: 'border-box',
             marginTop: isMobile ? '50px' : '64px', 
+            height: isMobile ? '100vh' : 'calc(100vh - 64px - 220px)',
           },
         }}
       >

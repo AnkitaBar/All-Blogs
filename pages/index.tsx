@@ -56,9 +56,9 @@ export default function Home() {
 
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' ,padding:'0px'}}>
       <img
-        src={'https://www.inexture.com/wp-content/uploads/2023/08/Top-10-React-Libraries.png'}
+        src={'https://i.pinimg.com/originals/4a/1d/cd/4a1dcd871bd83f20d177e07e00fb53f4.jpg'}
         alt="Landscape"
         style={{ width: '100%', maxHeight: '100vh', objectFit: 'cover' }}
       />
@@ -179,6 +179,7 @@ export default function Home() {
                       py: 1.5,
                       fontSize: "1rem",
                       textTransform: "none",
+                      marginBottom: "1rem",
                     }}
                     onClick={handleSubmit(onSubmit)}
                   >

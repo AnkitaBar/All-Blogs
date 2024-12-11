@@ -87,3 +87,88 @@ const Footer : React.FC = () => {
 }
 
 export default Footer
+
+
+// import React from "react";
+// import { Box, Typography, Grid, IconButton } from "@mui/material";
+// import { Facebook, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
+
+// const Footer: React.FC = () => {
+//     return (
+//         <Box
+//             component="footer"
+//             sx={{
+//                 backgroundColor: "#f5f5f5",
+//                 color: "black",
+//                 padding: 4,
+//                 marginTop: "auto",
+//                 boxShadow: "0 -1px 5px rgba(0, 0, 0, 0.1)",
+//             }}
+//         >
+//             {/* {/ Footer Content /} */}
+//             <Grid container spacing={4}>
+//                 {/* {/ About Section /} */}
+//                 <Grid item xs={12} sm={6} md={4}>
+//                     <Typography variant="h6" fontWeight="bold">
+//                         About Us
+//                     </Typography>
+//                     <Typography variant="body2" sx={{ marginTop: 1 }}>
+//                         We are committed to providing the best services and resources. Stay connected with us for updates and more information.
+//                     </Typography>
+//                 </Grid>
+
+//                 {/* {/ Navigation Links /} */}
+//                 <Grid item xs={12} sm={6} md={4}>
+//                     <Typography variant="h6" fontWeight="bold">
+//                         Quick Links
+//                     </Typography>
+//                     <Typography variant="body2" sx={{ marginTop: 1 }}>
+//                         <a href="/" style={{ color: "inherit", textDecoration: "none" }}>
+//                             Home
+//                         </a>
+//                     </Typography>
+//                     <Typography variant="body2">
+//                         <a href="/about" style={{ color: "inherit", textDecoration: "none" }}>
+//                             About Us
+//                         </a>
+//                     </Typography>
+//                     <Typography variant="body2">
+//                         <a href="/contact" style={{ color: "inherit", textDecoration: "none" }}>
+//                             Contact
+//                         </a>
+//                     </Typography>
+//                 </Grid>
+
+//                 {/* {/ Social Media Links /} */}
+//                 <Grid item xs={12} sm={6} md={4}>
+//                     <Typography variant="h6" fontWeight="bold">
+//                         Follow Us
+//                     </Typography>
+//                     <Box display="flex" gap={2} mt={1}>
+//                         <IconButton aria-label="Facebook" color="primary" href="https://facebook.com" target="_blank">
+//                             <Facebook />
+//                         </IconButton>
+//                         <IconButton aria-label="Twitter" color="primary" href="https://twitter.com" target="_blank">
+//                             <Twitter />
+//                         </IconButton>
+//                         <IconButton aria-label="Instagram" color="primary" href="https://instagram.com" target="_blank">
+//                             <Instagram />
+//                         </IconButton>
+//                         <IconButton aria-label="LinkedIn" color="primary" href="https://linkedin.com" target="_blank">
+//                             <LinkedIn />
+//                         </IconButton>
+//                     </Box>
+//                 </Grid>
+//             </Grid>
+
+//             {/* {/ Footer Bottom /} */}
+//             <Box mt={4} textAlign="center">
+//                 <Typography variant="body2">
+//                     &copy; {new Date().getFullYear()} Your Company. All rights reserved.
+//                 </Typography>
+//             </Box>
+//         </Box>
+//     );
+// };
+
+// export default Footer;
